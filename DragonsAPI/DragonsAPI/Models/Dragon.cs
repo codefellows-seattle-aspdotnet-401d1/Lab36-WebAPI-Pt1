@@ -10,5 +10,11 @@ namespace DragonsAPI.Models
         public int Id { get; set; }
         public string Species { get; set; }
         public string Description { get; set; }
+
+        public Dragon(string species, string description)
+        {
+            Species = species;
+            Description = description;
+        }
     }
 }
