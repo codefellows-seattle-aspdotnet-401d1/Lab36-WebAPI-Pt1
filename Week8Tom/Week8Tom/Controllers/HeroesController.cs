@@ -6,9 +6,20 @@ using System.Threading.Tasks;
 
 namespace Week8Tom.Controllers
 {
-    [Route("api/heroes")]
+    [Route("api/[controller]")]
     public class HeroesController : ControllerBase
     {
+        //GET
+        [HttpGet("{id}")]
+        public string Get(string id)
+        {
+            return $"I got this {id}";
 
+        }
+        //POST
+
+        //PUT
+
+        //DELETE
     }
 }
