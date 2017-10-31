@@ -8,27 +8,32 @@ using Week8Tom.Models;
 
 namespace Week8Tom.Controllers
 {
+    //Route token & attribute routing
     [Route("api/[controller]")]
     public class HeroesController : ControllerBase
     {
         private readonly HeroStatsDbContext _context;
 
+        //Dependency injection of context
         public HeroesController(HeroStatsDbContext context)
         {
             _context = context;
         }
 
         //GET
+        //Id constraint
         [HttpGet("{id:int?}")]
         public IActionResult Get(int id)
         {
+            //linq query using a lambda expression
             var result = _context.HeroStats.FirstOrDefault(h =>  h.Id == id);
 
+            //returns 200 status code
             return Ok(result);
-
         }
 
         //POST
+        //Model binding
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]HeroStats stat)
         {
