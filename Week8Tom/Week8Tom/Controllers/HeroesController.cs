@@ -10,8 +10,8 @@ namespace Week8Tom.Controllers
     public class HeroesController : ControllerBase
     {
         //GET
-        [HttpGet("{id}")]
-        public string Get(string id)
+        [HttpGet("{id:int?}")]
+        public string Get(string id = "not found")
         {
             return $"I got this {id}";
 
