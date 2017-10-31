@@ -17,5 +17,18 @@ namespace DragonsAPITests
             // Assert
             Assert.IsType(typeof(Dragon), myDragon);
         }
+
+        [Fact]
+        public void CanChangeDragonDescription()
+        {
+            //Arrange
+            var myDragon = new Dragon("Gold Dragon", "Gold colored scales, breathes fire.");
+
+            // Act
+            myDragon.Description = "Gold colored scales, breathes holy fire.";
+
+            // Assert
+            Assert.Equal("Gold colored scales, breathes holy fire.", myDragon.Description);
+        }
     }
 }
