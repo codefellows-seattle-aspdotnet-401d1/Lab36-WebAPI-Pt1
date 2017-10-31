@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Week8Tom.Data;
+using Week8Tom.Models;
 
 namespace Week8Tom.Controllers
 {
@@ -16,14 +17,26 @@ namespace Week8Tom.Controllers
         {
             _context = context;
         }
+
         //GET
         [HttpGet("{id:int?}")]
-        public string Get(string id = "not found")
+        public IActionResult Get(int id)
         {
-            return $"I got this {id}";
+            var result = _context.HeroStats.FirstOrDefault(h =>  h.Id == id);
+
+            return Ok(result);
 
         }
+
         //POST
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody]HeroStats stat)
+        {
+            _context.Add(stat);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("Get", new { id = stat.Id }, stat);
+        }
 
         //PUT
 
