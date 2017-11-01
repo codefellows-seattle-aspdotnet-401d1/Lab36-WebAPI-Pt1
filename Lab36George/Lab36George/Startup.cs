@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Lab36George.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Lab36George
 {
@@ -22,6 +20,11 @@ namespace Lab36George
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            // adding mvc
+            services.AddMvc();
+            // reference to the database connection string\
+            // I don't remember how to comment json, but this pulls from the appsetting.json that I created
+            services.AddDbContext<PartsDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));       
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -31,10 +34,14 @@ namespace Lab36George
             {
                 app.UseDeveloperExceptionPage();
             }
+            // adding mvc
+            app.UseMvc();
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("This is my default page.");
+                // Added text to the default page since there is no front end for the API
+                // This would be better if we did make one page though...
+                await context.Response.WriteAsync("This is the parts API default page.");
             });
         }
     }
