@@ -24,6 +24,7 @@ namespace Lab36WebApi
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            //Adding Mvc and the DbContext using SqlServer to get connection string
             services.AddMvc();
             services.AddDbContext<BirthdayPlannerDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }

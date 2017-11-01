@@ -12,13 +12,14 @@ namespace Lab36WebApi.Controllers
     public class TasksController : ControllerBase
     {
         private readonly BirthdayPlannerDbContext _context;
-
+        //Constructor for DbContexts dependency injection
         public TasksController(BirthdayPlannerDbContext context)
         {
             _context = context;
         }
 
-        [HttpGet("ID")]
+        //Http get method bringing in an int ID
+        [HttpGet("ID:int")]
         public IActionResult Get(int id)
         {
             var result = _context.BirthdayPlanner.FirstOrDefault(c => c.ID == id);
