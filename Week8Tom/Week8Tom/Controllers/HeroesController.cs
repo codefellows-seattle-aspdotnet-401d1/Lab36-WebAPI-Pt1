@@ -26,7 +26,7 @@ namespace Week8Tom.Controllers
         public IActionResult Get(int id)
         {
             //linq query using a lambda expression
-            var result = _context.HeroStats.FirstOrDefault(h =>  h.Id == id);
+            var result = _context.HeroStats.FirstOrDefault(h => h.Id == id);
 
             //returns 200 status code
             return Ok(result);
@@ -35,9 +35,10 @@ namespace Week8Tom.Controllers
         //POST
         //Model binding
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Post([FromBody]HeroStats stat)
         {
-            _context.Add(stat);
+            await _context.AddAsync(stat);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("Get", new { id = stat.Id }, stat);
