@@ -1,7 +1,6 @@
 ﻿using Lab36George.Data;
 using Lab36George.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
