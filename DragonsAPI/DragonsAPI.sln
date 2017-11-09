@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonsAPI", "DragonsAPI\DragonsAPI.csproj", "{9E3F7A9D-2A93-4DBE-9E39-0D8612812F0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonsAPITests", "DragonsAPITests\DragonsAPITests.csproj", "{B55C0677-C9E6-4E34-ACF2-A8A5CBD7CFA9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2A3874E0-B6E7-40F8-A27F-669CF5B4E6AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E3F7A9D-2A93-4DBE-9E39-0D8612812F0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E3F7A9D-2A93-4DBE-9E39-0D8612812F0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E3F7A9D-2A93-4DBE-9E39-0D8612812F0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E3F7A9D-2A93-4DBE-9E39-0D8612812F0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B55C0677-C9E6-4E34-ACF2-A8A5CBD7CFA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B55C0677-C9E6-4E34-ACF2-A8A5CBD7CFA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B55C0677-C9E6-4E34-ACF2-A8A5CBD7CFA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B55C0677-C9E6-4E34-ACF2-A8A5CBD7CFA9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B55C0677-C9E6-4E34-ACF2-A8A5CBD7CFA9} = {2A3874E0-B6E7-40F8-A27F-669CF5B4E6AD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB4D0CEB-A9EF-46E2-AAFE-6FE185F16D40}
+	EndGlobalSection
+EndGlobal
